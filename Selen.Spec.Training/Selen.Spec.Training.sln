@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XCartTesting", "XCartTesting\XCartTesting.csproj", "{DD05A999-6119-4DB2-B953-BE14E990E54A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{413A33D5-E22D-4B97-A2D2-510AFA2D6140}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "Core\Core.csproj", "{FF552AF3-0322-48F4-86F8-B18AE49DBADA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DD05A999-6119-4DB2-B953-BE14E990E54A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD05A999-6119-4DB2-B953-BE14E990E54A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD05A999-6119-4DB2-B953-BE14E990E54A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD05A999-6119-4DB2-B953-BE14E990E54A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FF552AF3-0322-48F4-86F8-B18AE49DBADA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF552AF3-0322-48F4-86F8-B18AE49DBADA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF552AF3-0322-48F4-86F8-B18AE49DBADA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF552AF3-0322-48F4-86F8-B18AE49DBADA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

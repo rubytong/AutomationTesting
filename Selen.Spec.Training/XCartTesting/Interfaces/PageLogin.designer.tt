@@ -1,0 +1,9 @@
+﻿<#@ include file=".\Template\header.txt" #>
+<# var xml = @"
+<page name='PageLogin'>
+	<control type='Textbox' name='TxtEmail' by='Name' value='login'/>
+	<control type='Textbox' name='TxtPassword' by='Name' value='password'/>
+	<control type='Button' name='BtnSubmit' by='CssSelector' value='button.submit'/>
+</page>
+";#>
+<#@ include file=".\Template\footer.txt" #>
