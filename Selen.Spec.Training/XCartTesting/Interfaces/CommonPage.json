@@ -1,0 +1,14 @@
+{
+  "$schema": "D:\\Programming\\GitHub\\AutomationTesting\\Selen.Spec.Training\\XCartTesting\\Interfaces\\PageSchema.json",
+  "controls": [
+    {
+      "controlName": "Close Dialog",
+      "controlType": "Button",
+      "by": "CssSelector",
+      "value": "button.ui-dialog-titlebar-close"
+    }
+  ],
+  "pageName": "Common Page",
+  "title": "",
+  "url": ""
+}

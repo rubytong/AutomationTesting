@@ -1,0 +1,11 @@
+[0302/005802.403:ERROR:process_reader_win.cc(173)] ResumeThread: The parameter is incorrect. (0x57)
+[0302/005802.405:ERROR:process_reader_win.cc(142)] SuspendThread: Access is denied. (0x5)
+[0302/005802.405:ERROR:process_reader_win.cc(142)] SuspendThread: Access is denied. (0x5)
+[0302/005802.405:ERROR:process_reader_win.cc(142)] SuspendThread: Access is denied. (0x5)
+[0302/005802.405:ERROR:process_reader_win.cc(114)] NtOpenThread: An invalid Client ID was specified.  (0xc000000b)
+[0302/005802.408:ERROR:process_reader_win.cc(142)] SuspendThread: Access is denied. (0x5)
+[0302/005802.409:ERROR:process_info.cc(608)] range at 0xfffde000, size 0x230 fully unreadable
+[0302/005802.414:ERROR:process_info.cc(608)] range at 0xfffdd000, size 0xf84 fully unreadable
+[0302/005802.414:ERROR:process_info.cc(608)] range at 0xfffda000, size 0xf84 fully unreadable
+[0302/005802.414:ERROR:process_info.cc(608)] range at 0xfffd7000, size 0xf84 fully unreadable
+[0302/005802.414:ERROR:process_info.cc(608)] range at 0xfffaf000, size 0xf84 fully unreadable

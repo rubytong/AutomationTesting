@@ -8,7 +8,7 @@ using XCartTesting.Pages;
 namespace XCartTesting.StepDefinitions.XcartAdmin
 {
     [Binding]
-    public sealed class HomeSteps : PageMapping
+    public sealed class HomeSteps : PageInstances
     {
         // For additional details on SpecFlow step definitions see http://go.specflow.org/doc-stepdef
 

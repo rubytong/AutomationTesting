@@ -9,6 +9,8 @@ using OpenQA.Selenium.IE;
 using OpenQA.Selenium.Firefox;
 using System.Diagnostics;
 using OpenQA.Selenium.Remote;
+using OpenQA.Selenium.Support.UI;
+using System.IO;
 
 namespace Core.Selen
 {
@@ -16,6 +18,7 @@ namespace Core.Selen
     {
         private static string pvName = "Chrome";
         private static string driversPath;
+
         public static string Name
         {
             get { return pvName; }
@@ -27,6 +30,17 @@ namespace Core.Selen
             get { return driversPath; }
             set { driversPath = value; }
         }
+
+        public static WebDriverWait Wait(int seconds)
+        {
+            WebDriverWait wait = new WebDriverWait(currentDriver, TimeSpan.FromSeconds(seconds));
+            wait.Timeout = TimeSpan.FromSeconds(seconds);
+            wait.PollingInterval = TimeSpan.FromSeconds(seconds / 5);
+            wait.IgnoreExceptionTypes(typeof(NoSuchElementException), typeof(StaleElementReferenceException));
+
+            return wait;
+        }
+
         private static IWebDriver currentDriver;
         public static IWebDriver Current
         {
@@ -43,8 +57,10 @@ namespace Core.Selen
                             currentDriver = new ChromeDriver(driversPath);
                             break;
                         case "Firefox":
-                            FirefoxDriverService service = FirefoxDriverService.CreateDefaultService(driversPath);
-                            currentDriver = new FirefoxDriver(service);
+                            System.Environment.SetEnvironmentVariable("webdriver.gecko.driver", driversPath);
+                            //Skip crash dialog
+                            System.Environment.SetEnvironmentVariable("XRE_NO_WINDOWS_CRASH_DIALOG", "1");
+                            currentDriver = new FirefoxDriver();
                             break;
                         default: break;
                     }

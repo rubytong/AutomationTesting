@@ -1,0 +1,44 @@
+﻿<# 
+JsonTextReader json = new JsonTextReader(new StreamReader(jsonPath));
+JObject obj = JObject.Load(json);
+string pageName = Regex.Replace((string)obj["pageName"], @"\s+", "");
+string pageTitle = (string)obj["title"];
+string pageUrl = (string)obj["url"]; 
+JArray pageItems = (JArray)obj["controls"];
+#>
+
+namespace XCartTesting.Pages
+{
+	public partial class <#= pageName #>
+	{
+<#	foreach (JToken token in pageItems.ToList())
+{
+		string privateName = Char.ToLower(token["controlName"].ToString()[0]) + token["controlName"].ToString().Substring(1)+token["controlType"].ToString();
+		privateName=Regex.Replace(privateName, @"\s+", "");#>
+		private <#= token["controlType"].ToString() #> <#= privateName #>;
+<#}#>
+
+<#	  foreach (JToken token in pageItems.ToList())
+{
+		string privateName = Char.ToLower(token["controlName"].ToString()[0]) + token["controlName"].ToString().Substring(1)+token["controlType"].ToString();
+		privateName=Regex.Replace(privateName, @"\s+", "");
+		string propName = Char.ToUpper(token["controlName"].ToString()[0]) + token["controlName"].ToString().Substring(1)+token["controlType"].ToString();
+		propName=Regex.Replace(propName, @"\s+", "");#>
+		public <#= token["controlType"].ToString() #> <#= propName #>
+		{
+			get
+			{
+				if(<#= privateName #>==null)
+				{
+					<#= privateName #> = new <#= token["controlType"].ToString() #>(By.<#= token["by"].ToString() #>("<#= token["value"].ToString() #>"));
+				}
+				return <#= privateName #>;
+			}
+			set
+			{
+				<#= privateName #> = value;
+			}
+		}
+<# } #>
+	}
+}

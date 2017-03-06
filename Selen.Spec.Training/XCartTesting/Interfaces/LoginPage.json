@@ -1,0 +1,26 @@
+{
+  "$schema": "./PageSchema.json",
+  "controls": [
+    {
+      "controlName": "Email",
+      "controlType": "Textbox",
+      "by": "Name",
+      "value": "login"
+    },
+    {
+      "controlName": "Password",
+      "controlType": "Textbox",
+      "by": "Name",
+      "value": "password"
+    },
+    {
+      "controlName": "Submit",
+      "controlType": "Button",
+      "by": "XPath",
+      "value": "//*[@id='login_form']//button"
+    }
+  ],
+  "pageName": "Login Page",
+  "title": "",
+  "url": ""
+}

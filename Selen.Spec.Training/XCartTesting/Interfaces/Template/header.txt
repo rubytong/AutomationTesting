@@ -1,8 +1,0 @@
-﻿<#@ template debug="false" hostspecific="false" language="C#" #><##>
-<#@ assembly name="System.Xml" #><##>
-<#@ import namespace="System.Xml" #><##>
-<#@ import namespace="System.Collections.Generic" #><##>
-<#@ output extension=".cs" #><##>
-using Core.Selen;
-using OpenQA.Selenium;
-using Core.Selen.Controls;

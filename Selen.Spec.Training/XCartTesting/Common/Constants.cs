@@ -10,9 +10,11 @@ namespace XCartTesting.Common
 {
     public static class Constants
     {
-
-        public static string driversPath = ConfigurationManager.AppSettings["driversPath"];
-        public static string urlAdmin = ConfigurationManager.AppSettings["urlAdmin"];
-        public static string browser = ConfigurationManager.AppSettings["browser"];
+        public static int WaitShortTime { get { return int.Parse(ConfigurationManager.AppSettings["waitShortTime"]); } }
+        public static int WaitMediumTime { get { return int.Parse(ConfigurationManager.AppSettings["waitMediumTime"]); } }
+        public static int WaitLongTime { get { return int.Parse(ConfigurationManager.AppSettings["waitLongTime"]); } }
+        public static string DriversPath { get { return ConfigurationManager.AppSettings["driversPath"]; } }
+        public static string UrlAdmin { get { return ConfigurationManager.AppSettings["urlAdmin"]; } }
+        public static string Browser { get { return ConfigurationManager.AppSettings["browser"]; } }
     }
 }

@@ -37,6 +37,10 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <myLibFolder>$(MSBuildProjectDirectory)\..\libs</myLibFolder>
+  </PropertyGroup>
+  <!-- Tell the MSBuild T4 task to make the property available: -->
   <ItemGroup>
     <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
@@ -73,19 +77,25 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>F01_OpenPages.feature</DependentUpon>
     </Compile>
-    <Compile Include="Interfaces\CommonPage.designer.cs">
-      <DependentUpon>CommonPage.designer.tt</DependentUpon>
+    <Compile Include="Features\F02_Orders.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>F02_Orders.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Hooks\BaseHooks.cs" />
+    <Compile Include="Pages\Properties\CommonPage.Items.cs">
+      <DependentUpon>CommonPage.Items.tt</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="Interfaces\PageLogin.designer.cs">
+    <Compile Include="Pages\Properties\LoginPage.Items.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>PageLogin.designer.tt</DependentUpon>
+      <DependentUpon>LoginPage.Items.tt</DependentUpon>
     </Compile>
     <Compile Include="Pages\CommonPage.cs" />
-    <Compile Include="Pages\PageLogin.cs" />
-    <Compile Include="Pages\PageMapping.cs" />
+    <Compile Include="Pages\LoginPage.cs" />
+    <Compile Include="Pages\PageInstances.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StepDefinitions\CommonSteps.cs" />
     <Compile Include="StepDefinitions\XcartAdmin\HomeSteps.cs" />
@@ -94,8 +104,13 @@
     <None Include="App.config">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Interfaces\Page.json" />
-    <None Include="Interfaces\PageSchema.json" />
+    <None Include="Features\F02_Orders.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>F02_Orders.feature.cs</LastGenOutput>
+    </None>
+    <EmbeddedResource Include="Interfaces\CommonPage.json" />
+    <EmbeddedResource Include="Interfaces\LoginPage.json" />
+    <EmbeddedResource Include="Interfaces\PageSchema.json" />
     <None Include="packages.config" />
     <None Include="Features\F01_OpenPages.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
@@ -103,7 +118,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Hooks\" />
     <Folder Include="StepDefinitions\XCartUser\" />
   </ItemGroup>
   <ItemGroup>
@@ -113,16 +127,16 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Interfaces\CommonPage.designer.tt">
+    <Content Include="Pages\Properties\CommonPage.Items.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>CommonPage.designer.cs</LastGenOutput>
+      <LastGenOutput>CommonPage.Items.cs</LastGenOutput>
     </Content>
-    <Content Include="Interfaces\Template\footer.txt" />
-    <Content Include="Interfaces\Template\header.txt" />
-    <Content Include="Interfaces\PageLogin.designer.tt">
+    <Content Include="Pages\Properties\LoginPage.Items.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>PageLogin.designer.cs</LastGenOutput>
+      <LastGenOutput>LoginPage.Items.cs</LastGenOutput>
     </Content>
+    <Content Include="Pages\Properties\Template\footer.txt" />
+    <Content Include="Pages\Properties\Template\header.txt" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
@@ -160,11 +174,7 @@
   <Import Project="..\packages\Selenium.Firefox.WebDriver.0.13.0\build\Selenium.Firefox.WebDriver.targets" Condition="Exists('..\packages\Selenium.Firefox.WebDriver.0.13.0\build\Selenium.Firefox.WebDriver.targets')" />
   <Import Project="..\packages\Selenium.WebDriver.ChromeDriver.2.27.0\build\Selenium.WebDriver.ChromeDriver.targets" Condition="Exists('..\packages\Selenium.WebDriver.ChromeDriver.2.27.0\build\Selenium.WebDriver.ChromeDriver.targets')" />
   <Import Project="..\packages\Selenium.WebDriver.IEDriver.3.1.0\build\Selenium.WebDriver.IEDriver.targets" Condition="Exists('..\packages\Selenium.WebDriver.IEDriver.3.1.0\build\Selenium.WebDriver.IEDriver.targets')" />
-  <ProjectExtensions>
-    <VisualStudio>
-      <UserProperties Interfaces_4Page_1json__JSONSchema="http://json.schemastore.org/config" />
-    </VisualStudio>
-  </ProjectExtensions>
+  <ProjectExtensions />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

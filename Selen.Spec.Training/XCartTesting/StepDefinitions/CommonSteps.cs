@@ -7,11 +7,15 @@ using Core.Selen;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using XCartTesting.Pages;
 using XCartTesting.Common;
+using Newtonsoft.Json;
+using System.IO;
+using Newtonsoft.Json.Linq;
+using System.Text.RegularExpressions;
 
 namespace XCartTesting.StepDefinitions
 {
     [Binding]
-    public sealed class CommonSteps : PageMapping
+    public sealed class CommonSteps : PageInstances
     {
         #region Given
         #endregion
@@ -21,8 +25,6 @@ namespace XCartTesting.StepDefinitions
         [Given("I have gone to the (.*) url")]
         public void GoToUrl(string url)
         {
-            Browser.DriversPath = Constants.driversPath;
-            Browser.Name = Constants.browser;
             Browser.Current.Navigate().GoToUrl(url);
         }
 
@@ -35,7 +37,10 @@ namespace XCartTesting.StepDefinitions
         [When("I login with username (.*) and password (.*)")]
         public void Login(string username, string password)
         {
-            PageLogin.Login(username, password);
+            LoginPage.Login(username, password);
+
+            //Close dialog if any
+            CommonPage.CloseDialog();
         }
         #endregion
 

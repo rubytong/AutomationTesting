@@ -1,7 +1,0 @@
-﻿<#@ include file=".\Template\header.txt" #>
-<# var xml = @"
-<page name='CommonPage'>
-	<control type='Button' name='BtnCloseDialog' by='CssSelector' value='button.ui-dialog-titlebar-close'/>
-</page>
-";#>
-<#@ include file=".\Template\footer.txt" #>

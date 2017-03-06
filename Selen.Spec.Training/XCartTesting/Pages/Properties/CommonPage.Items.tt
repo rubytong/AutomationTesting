@@ -1,0 +1,3 @@
+﻿<#@ include file=".\Template\header.txt" #>
+<#string jsonPath = @".\XCartTesting\Interfaces\CommonPage.json";#>
+<#@ include file=".\Template\footer.txt" #>

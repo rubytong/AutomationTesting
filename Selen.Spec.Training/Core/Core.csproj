@@ -69,6 +69,7 @@
     <Compile Include="Selen\Controls\Button.cs" />
     <Compile Include="Selen\Controls\Textbox.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Selen\RunningSettings.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Utils\" />

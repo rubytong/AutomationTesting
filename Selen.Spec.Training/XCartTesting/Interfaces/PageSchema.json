@@ -1,13 +1,51 @@
 {
-  "compilerOptions": {
-    "noImplicitAny": false,
-    "noEmitOnError": true,
-    "removeComments": false,
-    "sourceMap": true,
-    "target": "es5"
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "Page",
+  "description": "A product from Acme's catalog",
+  "type": "object",
+  "properties": {
+    "controls": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "controlName": {
+            "description": "The unique identifier for a page item, ex. username textbox",
+            "type": "string"
+          },
+          "controlType": {
+            "description": "Control type, ex. textbox",
+            "enum": [ "Textbox", "Button", "BaseControl", "Hyperlink", "Table", "Combobox" ]
+          },
+          "by": {
+            "description": "by type of a page item",
+            "enum": [ "ClassName", "CssSelector","Id","Name","LinkText","XPath","TagName","PartialLinkText" ]
+          },
+          "value": {
+            "description": "value of by",
+            "type": "string"
+          }
+        },
+        "required": [
+          "controlName",
+          "by",
+          "value",
+          "controlType"
+        ]
+      }
+    },
+    "pageName": {
+      "description": "The unique identifier for a page",
+      "type": "string"
+    },
+    "title": {
+      "description": "Title of the page",
+      "type": "string"
+    },
+    "url": {
+      "description": "Url of the page",
+      "type": "string"
+    }
   },
-  "exclude": [
-    "node_modules",
-    "wwwroot"
-  ]
+  "required": [ "pageName" ]
 }

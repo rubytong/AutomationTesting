@@ -9,16 +9,13 @@ using System.Xml;
 
 namespace XCartTesting.Pages
 {
-    public partial class PageLogin : CommonPage
+    public partial class LoginPage
     {
         public void Login(string username, string password)
         {
-            TxtEmail.SendKeys(username);
-            TxtPassword.SendKeys(password);
-            BtnSubmit.Click();
-
-            //Close dialog if any
-            CloseDialog();
+            EmailTextbox.SendKeys(username);
+            PasswordTextbox.SendKeys(password);
+            SubmitButton.Click();
         }
 
     }
