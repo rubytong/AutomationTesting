@@ -7,7 +7,7 @@ string pageUrl = (string)obj["url"];
 JArray pageItems = (JArray)obj["controls"];
 #>
 
-namespace XCartTesting.Pages
+namespace XCartTesting.Admin.Pages
 {
 	public partial class <#= pageName #>
 	{

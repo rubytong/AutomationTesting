@@ -10,7 +10,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace XCartTesting.Features
+namespace XCartTesting.Admin.Features
 {
     using TechTalk.SpecFlow;
     
@@ -18,19 +18,19 @@ namespace XCartTesting.Features
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "2.1.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [Microsoft.VisualStudio.TestTools.UnitTesting.TestClassAttribute()]
-    public partial class OpenPagesFeature
+    public partial class LoginFeature
     {
         
         private static TechTalk.SpecFlow.ITestRunner testRunner;
         
-#line 1 "F01_OpenPages.feature"
+#line 1 "Admin_F01_Login.feature"
 #line hidden
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.ClassInitializeAttribute()]
         public static void FeatureSetup(Microsoft.VisualStudio.TestTools.UnitTesting.TestContext testContext)
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner(null, 0);
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Open Pages", null, ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Login", null, ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -45,9 +45,9 @@ namespace XCartTesting.Features
         public virtual void TestInitialize()
         {
             if (((testRunner.FeatureContext != null) 
-                        && (testRunner.FeatureContext.FeatureInfo.Title != "Open Pages")))
+                        && (testRunner.FeatureContext.FeatureInfo.Title != "Login")))
             {
-                XCartTesting.Features.OpenPagesFeature.FeatureSetup(null);
+                XCartTesting.Admin.Features.LoginFeature.FeatureSetup(null);
             }
         }
         
@@ -68,12 +68,12 @@ namespace XCartTesting.Features
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("F01_TC01_Open XCart Admin page")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Open Pages")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Admin_F01_TC01_Open XCart Admin page")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Login")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("mytag")]
-        public virtual void F01_TC01_OpenXCartAdminPage()
+        public virtual void Admin_F01_TC01_OpenXCartAdminPage()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("F01_TC01_Open XCart Admin page", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Admin_F01_TC01_Open XCart Admin page", new string[] {
                         "mytag"});
 #line 4
 this.ScenarioSetup(scenarioInfo);
@@ -86,11 +86,11 @@ this.ScenarioSetup(scenarioInfo);
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("F01_TC02_Login with valid account")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Open Pages")]
-        public virtual void F01_TC02_LoginWithValidAccount()
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Admin_F01_TC02_Login with valid account")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Login")]
+        public virtual void Admin_F01_TC02_LoginWithValidAccount()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("F01_TC02_Login with valid account", ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Admin_F01_TC02_Login with valid account", ((string[])(null)));
 #line 8
 this.ScenarioSetup(scenarioInfo);
 #line 9

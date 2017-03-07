@@ -2,9 +2,9 @@
 using OpenQA.Selenium;
 using Core.Selen.Controls;
 
-namespace XCartTesting.Pages
+namespace XCartTesting.Admin.Pages
 {
-	public partial class CommonPage
+	public partial class AdminCommonPage
 	{
 		private Button closeDialogButton;
 
@@ -14,7 +14,7 @@ namespace XCartTesting.Pages
 			{
 				if(closeDialogButton==null)
 				{
-                    closeDialogButton = new Button(By.CssSelector("button.ui-dialog-titlebar-close"));
+					closeDialogButton = new Button(By.CssSelector("button.ui-dialog-titlebar-close"));
 				}
 				return closeDialogButton;
 			}

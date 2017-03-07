@@ -6,9 +6,9 @@ using System.Text;
 using System.Threading.Tasks;
 using XCartTesting.Common;
 
-namespace XCartTesting.Pages
+namespace XCartTesting.Admin.Pages
 {
-    public partial class CommonPage
+    public partial class AdminCommonPage
     {
         public void CloseDialog()
         {

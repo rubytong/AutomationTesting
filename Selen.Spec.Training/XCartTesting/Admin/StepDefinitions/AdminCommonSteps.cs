@@ -5,14 +5,14 @@ using System.Text;
 using TechTalk.SpecFlow;
 using Core.Selen;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using XCartTesting.Pages;
+using XCartTesting.Admin.Pages;
 using XCartTesting.Common;
 using Newtonsoft.Json;
 using System.IO;
 using Newtonsoft.Json.Linq;
 using System.Text.RegularExpressions;
 
-namespace XCartTesting.StepDefinitions
+namespace XCartTesting.Admin.StepDefinitions
 {
     [Binding]
     public sealed class CommonSteps : PageInstances
@@ -37,10 +37,10 @@ namespace XCartTesting.StepDefinitions
         [When("I login with username (.*) and password (.*)")]
         public void Login(string username, string password)
         {
-            LoginPage.Login(username, password);
+            AdminLoginPage.Login(username, password);
 
             //Close dialog if any
-            CommonPage.CloseDialog();
+            AdminCommonPage.CloseDialog();
         }
         #endregion
 

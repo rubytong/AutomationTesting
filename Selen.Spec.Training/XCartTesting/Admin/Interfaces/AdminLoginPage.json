@@ -1,5 +1,5 @@
 {
-  "$schema": "./PageSchema.json",
+  "$schema": "../Common/PageSchema.json",
   "controls": [
     {
       "controlName": "Email",
@@ -20,7 +20,7 @@
       "value": "//*[@id='login_form']//button"
     }
   ],
-  "pageName": "Login Page",
+  "pageName": "Admin Login Page",
   "title": "",
   "url": ""
 }

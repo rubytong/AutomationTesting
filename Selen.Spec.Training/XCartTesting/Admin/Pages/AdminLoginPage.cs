@@ -7,9 +7,9 @@ using Core.Selen;
 using OpenQA.Selenium;
 using System.Xml;
 
-namespace XCartTesting.Pages
+namespace XCartTesting.Admin.Pages
 {
-    public partial class LoginPage
+    public partial class AdminLoginPage
     {
         public void Login(string username, string password)
         {

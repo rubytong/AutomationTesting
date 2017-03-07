@@ -2,9 +2,9 @@
 using OpenQA.Selenium;
 using Core.Selen.Controls;
 
-namespace XCartTesting.Pages
+namespace XCartTesting.Admin.Pages
 {
-	public partial class LoginPage
+	public partial class AdminLoginPage
 	{
 		private Textbox emailTextbox;
 		private Textbox passwordTextbox;

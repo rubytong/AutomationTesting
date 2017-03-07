@@ -72,53 +72,52 @@
   </Choose>
   <ItemGroup>
     <Compile Include="Common\Constants.cs" />
-    <Compile Include="Features\F01_OpenPages.feature.cs">
+    <Compile Include="Admin\Features\Admin_F01_Login.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>F01_OpenPages.feature</DependentUpon>
+      <DependentUpon>Admin_F01_Login.feature</DependentUpon>
     </Compile>
-    <Compile Include="Features\F02_Orders.feature.cs">
+    <Compile Include="Admin\Features\Admin_F02_Order.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>F02_Orders.feature</DependentUpon>
+      <DependentUpon>Admin_F02_Order.feature</DependentUpon>
     </Compile>
-    <Compile Include="Hooks\BaseHooks.cs" />
-    <Compile Include="Pages\Properties\CommonPage.Items.cs">
-      <DependentUpon>CommonPage.Items.tt</DependentUpon>
+    <Compile Include="Common\BaseHooks.cs" />
+    <Compile Include="Admin\Pages\Properties\AdminCommonPage.Items.cs">
+      <DependentUpon>AdminCommonPage.Items.tt</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="Pages\Properties\LoginPage.Items.cs">
+    <Compile Include="Admin\Pages\Properties\AdminLoginPage.Items.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>LoginPage.Items.tt</DependentUpon>
+      <DependentUpon>AdminLoginPage.Items.tt</DependentUpon>
     </Compile>
-    <Compile Include="Pages\CommonPage.cs" />
-    <Compile Include="Pages\LoginPage.cs" />
-    <Compile Include="Pages\PageInstances.cs" />
+    <Compile Include="Admin\Pages\AdminCommonPage.cs" />
+    <Compile Include="Admin\Pages\AdminLoginPage.cs" />
+    <Compile Include="Common\PageInstances.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="StepDefinitions\CommonSteps.cs" />
-    <Compile Include="StepDefinitions\XcartAdmin\HomeSteps.cs" />
+    <Compile Include="Admin\StepDefinitions\AdminCommonSteps.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Features\F02_Orders.feature">
+    <EmbeddedResource Include="Common\PageSchema.json" />
+    <None Include="Admin\Features\Admin_F02_Order.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>F02_Orders.feature.cs</LastGenOutput>
+      <LastGenOutput>Admin_F02_Order.feature.cs</LastGenOutput>
     </None>
-    <EmbeddedResource Include="Interfaces\CommonPage.json" />
-    <EmbeddedResource Include="Interfaces\LoginPage.json" />
-    <EmbeddedResource Include="Interfaces\PageSchema.json" />
+    <EmbeddedResource Include="Admin\Interfaces\AdminCommonPage.json" />
+    <EmbeddedResource Include="Admin\Interfaces\AdminLoginPage.json" />
     <None Include="packages.config" />
-    <None Include="Features\F01_OpenPages.feature">
+    <None Include="Admin\Features\Admin_F01_Login.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>F01_OpenPages.feature.cs</LastGenOutput>
+      <LastGenOutput>Admin_F01_Login.feature.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="StepDefinitions\XCartUser\" />
+    <Folder Include="Admin\Hooks\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Core\Core.csproj">
@@ -127,16 +126,16 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Pages\Properties\CommonPage.Items.tt">
+    <Content Include="Admin\Pages\Properties\AdminCommonPage.Items.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>CommonPage.Items.cs</LastGenOutput>
+      <LastGenOutput>AdminCommonPage.Items.cs</LastGenOutput>
     </Content>
-    <Content Include="Pages\Properties\LoginPage.Items.tt">
+    <Content Include="Admin\Pages\Properties\AdminLoginPage.Items.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>LoginPage.Items.cs</LastGenOutput>
+      <LastGenOutput>AdminLoginPage.Items.cs</LastGenOutput>
     </Content>
-    <Content Include="Pages\Properties\Template\footer.txt" />
-    <Content Include="Pages\Properties\Template\header.txt" />
+    <Content Include="Admin\Pages\Properties\Template\footer.txt" />
+    <Content Include="Admin\Pages\Properties\Template\header.txt" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
@@ -174,7 +173,11 @@
   <Import Project="..\packages\Selenium.Firefox.WebDriver.0.13.0\build\Selenium.Firefox.WebDriver.targets" Condition="Exists('..\packages\Selenium.Firefox.WebDriver.0.13.0\build\Selenium.Firefox.WebDriver.targets')" />
   <Import Project="..\packages\Selenium.WebDriver.ChromeDriver.2.27.0\build\Selenium.WebDriver.ChromeDriver.targets" Condition="Exists('..\packages\Selenium.WebDriver.ChromeDriver.2.27.0\build\Selenium.WebDriver.ChromeDriver.targets')" />
   <Import Project="..\packages\Selenium.WebDriver.IEDriver.3.1.0\build\Selenium.WebDriver.IEDriver.targets" Condition="Exists('..\packages\Selenium.WebDriver.IEDriver.3.1.0\build\Selenium.WebDriver.IEDriver.targets')" />
-  <ProjectExtensions />
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties Interfaces_4LoginPage_1json__JSONSchema="..\Common\PageSchema.json" />
+    </VisualStudio>
+  </ProjectExtensions>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
