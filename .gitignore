@@ -47,5 +47,5 @@ Temporary Items
 .apdisk
 
 # Skip following folders
-bin/*
-obj/*
+/**/bin/*
+/**/obj/*
