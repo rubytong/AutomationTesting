@@ -102,7 +102,6 @@
     <EmbeddedResource Include="Common\PageSchema.json" />
     <None Include="Admin\Features\Admin_F02_Order.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>Admin_F02_Order1.feature.cs</LastGenOutput>
     </None>
     <EmbeddedResource Include="Admin\Interfaces\AdminCommonPage.json" />
     <EmbeddedResource Include="Admin\Interfaces\AdminLoginPage.json" />
