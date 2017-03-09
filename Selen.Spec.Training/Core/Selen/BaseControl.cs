@@ -10,8 +10,9 @@ namespace Core.Selen
 {
     public class BaseControl
     {
-        protected By by;
-        protected IWebElement element;
+        private By by;
+        public string XPath { get; set; }
+        private IWebElement element;
 
         protected IWebElement Element
         {
@@ -28,6 +29,12 @@ namespace Core.Selen
         public BaseControl(By by)
         {
             this.by = by;
+        }
+
+        public BaseControl(string xPath)
+        {
+            this.by = By.XPath(xPath);
+            this.XPath = xPath;
         }
 
         public virtual void Clear()

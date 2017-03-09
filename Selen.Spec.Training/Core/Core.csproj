@@ -66,6 +66,8 @@
   <ItemGroup>
     <Compile Include="Selen\Browser.cs" />
     <Compile Include="Selen\BaseControl.cs" />
+    <Compile Include="Selen\Controls\Table.cs" />
+    <Compile Include="Selen\Controls\Hyperlink.cs" />
     <Compile Include="Selen\Controls\Button.cs" />
     <Compile Include="Selen\Controls\Textbox.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

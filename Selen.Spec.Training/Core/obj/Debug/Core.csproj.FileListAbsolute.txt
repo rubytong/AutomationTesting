@@ -8,13 +8,3 @@ D:\Programming\GitHub\AutoTestProjects\Selen.Spec.Training\Core\bin\Debug\WebDri
 D:\Programming\GitHub\AutoTestProjects\Selen.Spec.Training\Core\obj\Debug\Core.csprojResolveAssemblyReference.cache
 D:\Programming\GitHub\AutoTestProjects\Selen.Spec.Training\Core\obj\Debug\Core.dll
 D:\Programming\GitHub\AutoTestProjects\Selen.Spec.Training\Core\obj\Debug\Core.pdb
-D:\Programming\GitHub\AutomationTesting\Selen.Spec.Training\Core\bin\Debug\Core.dll
-D:\Programming\GitHub\AutomationTesting\Selen.Spec.Training\Core\bin\Debug\Core.pdb
-D:\Programming\GitHub\AutomationTesting\Selen.Spec.Training\Core\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
-D:\Programming\GitHub\AutomationTesting\Selen.Spec.Training\Core\bin\Debug\WebDriver.dll
-D:\Programming\GitHub\AutomationTesting\Selen.Spec.Training\Core\bin\Debug\WebDriver.Support.dll
-D:\Programming\GitHub\AutomationTesting\Selen.Spec.Training\Core\bin\Debug\WebDriver.xml
-D:\Programming\GitHub\AutomationTesting\Selen.Spec.Training\Core\bin\Debug\WebDriver.Support.xml
-D:\Programming\GitHub\AutomationTesting\Selen.Spec.Training\Core\obj\Debug\Core.csprojResolveAssemblyReference.cache
-D:\Programming\GitHub\AutomationTesting\Selen.Spec.Training\Core\obj\Debug\Core.dll
-D:\Programming\GitHub\AutomationTesting\Selen.Spec.Training\Core\obj\Debug\Core.pdb

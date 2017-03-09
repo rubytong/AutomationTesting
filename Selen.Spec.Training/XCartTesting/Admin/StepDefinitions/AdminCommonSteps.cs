@@ -15,7 +15,7 @@ using System.Text.RegularExpressions;
 namespace XCartTesting.Admin.StepDefinitions
 {
     [Binding]
-    public sealed class CommonSteps : PageInstances
+    public sealed class CommonSteps : PageManager
     {
         #region Given
         #endregion
@@ -49,6 +49,13 @@ namespace XCartTesting.Admin.StepDefinitions
         public void VerifyTitlePage(string title)
         {
             Assert.AreEqual<string>(title, Browser.Current.Title, "The title page is incorrect.");
+        }
+
+        [Then("(.*) menu item should be displayed in the left menu")]
+        public void VerifyMenuItemsInTheLeftMenu()
+        {   
+           // AdminCommonPage.LeftMenuItemHyperlink.
+
         }
         #endregion
 

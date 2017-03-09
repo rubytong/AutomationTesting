@@ -10,13 +10,9 @@ namespace Core.Selen.Controls
     public class Textbox:BaseControl
     {
 
-        public Textbox()
-        {
+        public Textbox() : base() { }
+        public Textbox(By by):base(by){ }
+        public Textbox(string xPath) : base(xPath) { }
 
-        }
-
-        public Textbox(By by):base(by)
-        { }
-        
     }
 }

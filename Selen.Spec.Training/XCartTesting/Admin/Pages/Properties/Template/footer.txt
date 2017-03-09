@@ -30,7 +30,7 @@ namespace XCartTesting.Admin.Pages
 			{
 				if(<#= privateName #>==null)
 				{
-					<#= privateName #> = new <#= token["controlType"].ToString() #>(By.<#= token["by"].ToString() #>("<#= token["value"].ToString() #>"));
+					<#if(token["by"].ToString()=="XPath"){#><#=privateName #> = new <#= token["controlType"].ToString() #>("<#= token["value"].ToString() #>");<#}else{#><#= privateName #> = new <#= token["controlType"].ToString() #>(By.<#= token["by"].ToString() #>("<#= token["value"].ToString() #>"));<#}#>
 				}
 				return <#= privateName #>;
 			}

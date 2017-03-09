@@ -9,11 +9,8 @@ namespace Core.Selen.Controls
 {
     public class Button:BaseControl
     {
-        public Button()
-        {
-
-        }
-
+        public Button() : base() { }
         public Button(By by):base(by){ }
+        public Button(string xPath) : base(xPath) { }
     }
 }

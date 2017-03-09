@@ -6,6 +6,18 @@
       "controlType": "Button",
       "by": "CssSelector",
       "value": "button.ui-dialog-titlebar-close"
+    },
+    {
+      "controlName": "Left Menu Item",
+      "controlType": "Hyperlink",
+      "by": "XPath",
+      "value": "//.[@id='leftMenu']//a[.='{0}']"
+    },
+    {
+      "controlName": "Left Sub Menu Item",
+      "controlType": "Hyperlink",
+      "by": "XPath",
+      "value": "//div[@id='leftMenu']//a[.='{0}']/../following-sibling::div[1]//a[.='{1}']"
     }
   ],
   "pageName": "Admin Common Page",
