@@ -11,6 +11,7 @@ using Newtonsoft.Json;
 using System.IO;
 using Newtonsoft.Json.Linq;
 using System.Text.RegularExpressions;
+using Core.Selen.Controls;
 
 namespace XCartTesting.Admin.StepDefinitions
 {
@@ -25,15 +26,13 @@ namespace XCartTesting.Admin.StepDefinitions
         [Given("I have gone to the (.*) url")]
         public void GoToUrl(string url)
         {
-            string a = "ab";
-            string b = nameof(a);
             Browser.Current.Navigate().GoToUrl(url);
         }
 
         [When("I click (.*button|.*link) on (.*) page")]
         public void Click(string control, string page)
         {
-           
+
         }
 
         [When("I login with username (.*) and password (.*)")]
@@ -44,6 +43,20 @@ namespace XCartTesting.Admin.StepDefinitions
             //Close dialog if any
             AdminCommonPage.CloseDialog();
         }
+
+        [When("I open (.*) menu item")]
+        public void SelectMenuItem(string name)
+        {
+            Hyperlink menuItemLink = new Hyperlink(string.Format(AdminCommonPage.LeftMenuItemHyperlink.XPath, name));
+            menuItemLink.Click();
+        }
+        [When("I select (.*) under (.*) menu item")]
+        public void SelectLinkUnderMenuItem(string subItem, string menuItem)
+        {
+            Hyperlink link = new Hyperlink(string.Format(AdminCommonPage.LeftSubMenuItemHyperlink.XPath, subItem, menuItem));
+            link.Click();
+        }
+
         #endregion
 
         #region Then
@@ -54,10 +67,26 @@ namespace XCartTesting.Admin.StepDefinitions
         }
 
         [Then("(.*) menu item should be displayed in the left menu")]
-        public void VerifyMenuItemsInTheLeftMenu()
-        {   
-           // AdminCommonPage.LeftMenuItemHyperlink.
+        public void VerifyMenuItemsInTheLeftMenu(string name)
+        {
+            Hyperlink menuItemLink = new Hyperlink(string.Format(AdminCommonPage.LeftMenuItemHyperlink.XPath, name));
+            Assert.IsTrue(menuItemLink.Displayed, $"{name} menu item isn't displayed in the left menu.");
 
+        }
+
+        [Then("(.*) items are displayed under (.*) menu item")]
+        public void VerifySubItemListUnderMenuItem(string subItems, string menuItem)
+        {
+            var subItemsList = Regex.Split(subItems, ", ").ToList();
+            var items = subItemsList.Where(x => !(new Hyperlink(string.Format(AdminCommonPage.LeftSubMenuItemHyperlink.XPath, x,menuItem)).Displayed));
+
+            Assert.IsTrue(items.Count<string>() == 0, $"These items {items} aren't displayed under {menuItem} menu item.");
+        }
+        [Then("(.*) page should be displayed")]
+        public void VerifyPageDisplayed(string name)
+        {
+            string text = AdminCommonPage.PageTitleSpan.Text;
+            Assert.AreEqual<string>(name, AdminCommonPage.PageTitleSpan.Text);
         }
         #endregion
 

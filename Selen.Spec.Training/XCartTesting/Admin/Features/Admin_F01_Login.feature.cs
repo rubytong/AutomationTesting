@@ -97,6 +97,8 @@ this.ScenarioSetup(scenarioInfo);
  testRunner.Given("I have gone to the http://localhost:81/admin.php url", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 10
  testRunner.When("I login with username user@example.com and password 1234", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 11
+ testRunner.Then("Orders menu item should be displayed in the left menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

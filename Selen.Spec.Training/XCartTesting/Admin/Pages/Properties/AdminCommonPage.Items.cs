@@ -9,6 +9,7 @@ namespace XCartTesting.Admin.Pages
 		private Button closeDialogButton;
 		private Hyperlink leftMenuItemHyperlink;
 		private Hyperlink leftSubMenuItemHyperlink;
+		private Span pageTitleSpan;
 
 		public Button CloseDialogButton
 		{
@@ -53,6 +54,21 @@ namespace XCartTesting.Admin.Pages
 			set
 			{
 				leftSubMenuItemHyperlink = value;
+			}
+		}
+		public Span PageTitleSpan
+		{
+			get
+			{
+				if (pageTitleSpan==null)
+				{
+					pageTitleSpan = new Span("//*[@id='page-title']//span");
+				}
+				return pageTitleSpan;
+			}
+			set
+			{
+				pageTitleSpan = value;
 			}
 		}
 	}

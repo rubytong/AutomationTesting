@@ -1,5 +1,5 @@
 {
-  "$schema": "../Common/PageSchema.json",
+  "$schema":  "../../Common/PageSchema.json",
   "controls": [
     {
       "controlName": "Close Dialog",
@@ -18,6 +18,12 @@
       "controlType": "Hyperlink",
       "by": "XPath",
       "value": "//div[@id='leftMenu']//a[.='{0}']/../following-sibling::div[1]//a[.='{1}']"
+    },
+    {
+      "controlName": "Page Title",
+      "controlType": "Span",
+      "by": "XPath",
+      "value": "//*[@id='page-title']//span"
     }
   ],
   "pageName": "Admin Common Page",

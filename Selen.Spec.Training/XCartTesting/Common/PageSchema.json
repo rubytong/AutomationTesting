@@ -15,7 +15,7 @@
           },
           "controlType": {
             "description": "Control type, ex. textbox",
-            "enum": [ "Textbox", "Button", "BaseControl", "Hyperlink", "Table", "Combobox" ]
+            "enum": [ "Textbox", "Button", "BaseControl", "Hyperlink", "Table", "Combobox","Span" ]
           },
           "by": {
             "description": "by type of a page item",

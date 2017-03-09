@@ -1,5 +1,5 @@
 {
-  "$schema": "../Common/PageSchema.json",
+  "$schema": "../../Common/PageSchema.json",
   "controls": [
     {
       "controlName": "Email",

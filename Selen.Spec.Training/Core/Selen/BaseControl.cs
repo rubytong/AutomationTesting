@@ -11,7 +11,12 @@ namespace Core.Selen
     public class BaseControl
     {
         private By by;
-        public string XPath { get; set; }
+        private string xPath;
+        public string XPath
+        {
+            get { return this.xPath; }
+            set { this.by = By.XPath(value); this.xPath = value; }
+        }
         private IWebElement element;
 
         protected IWebElement Element
@@ -49,7 +54,7 @@ namespace Core.Selen
 
         }
 
-        public void WaitForControlExists(int timeoutInSeconds=10)
+        public void WaitForControlExists(int timeoutInSeconds = 10)
         {
             try
             {
@@ -110,7 +115,7 @@ namespace Core.Selen
 
         public virtual bool Selected
         {
-            get {return Element.Selected; }
+            get { return Element.Selected; }
         }
 
         public virtual void SendKeys(string text)
