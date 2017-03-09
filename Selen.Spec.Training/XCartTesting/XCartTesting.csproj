@@ -72,10 +72,10 @@
   </Choose>
   <ItemGroup>
     <Compile Include="Admin\Pages\Class1.cs" />
-    <Compile Include="Admin\Pages\Properties\CommonPage.Items.cs">
+    <Compile Include="Admin\Pages\Properties\AdminCommonPage.Items.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>CommonPage.Items.tt</DependentUpon>
+      <DependentUpon>AdminCommonPage.Items.tt</DependentUpon>
     </Compile>
     <Compile Include="Common\Constants.cs" />
     <Compile Include="Admin\Features\Admin_F01_Login.feature.cs">
@@ -133,9 +133,9 @@
     </Content>
     <Content Include="Admin\Pages\Properties\Template\footer.txt" />
     <Content Include="Admin\Pages\Properties\Template\header.txt" />
-    <Content Include="Admin\Pages\Properties\CommonPage.Items.tt">
+    <Content Include="Admin\Pages\Properties\AdminCommonPage.Items.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>CommonPage.Items.cs</LastGenOutput>
+      <LastGenOutput>AdminCommonPage.Items.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <ItemGroup>

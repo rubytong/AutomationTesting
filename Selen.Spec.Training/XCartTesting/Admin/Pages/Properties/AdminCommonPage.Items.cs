@@ -14,9 +14,10 @@ namespace XCartTesting.Admin.Pages
 		{
 			get
 			{
-				if(closeDialogButton==null)
+				if (closeDialogButton==null)
 				{
-					closeDialogButton = new Button(By.CssSelector("button.ui-dialog-titlebar-close"));				}
+					closeDialogButton = new Button(By.CssSelector("button.ui-dialog-titlebar-close"));
+				}
 				return closeDialogButton;
 			}
 			set
@@ -28,9 +29,10 @@ namespace XCartTesting.Admin.Pages
 		{
 			get
 			{
-				if(leftMenuItemHyperlink==null)
+				if (leftMenuItemHyperlink==null)
 				{
-					leftMenuItemHyperlink = new Hyperlink("//.[@id='leftMenu']//a[.='{0}']");				}
+					leftMenuItemHyperlink = new Hyperlink("//.[@id='leftMenu']//a[.='{0}']");
+				}
 				return leftMenuItemHyperlink;
 			}
 			set
@@ -42,9 +44,10 @@ namespace XCartTesting.Admin.Pages
 		{
 			get
 			{
-				if(leftSubMenuItemHyperlink==null)
+				if (leftSubMenuItemHyperlink==null)
 				{
-					leftSubMenuItemHyperlink = new Hyperlink("//div[@id='leftMenu']//a[.='{0}']/../following-sibling::div[1]//a[.='{1}']");				}
+					leftSubMenuItemHyperlink = new Hyperlink("//div[@id='leftMenu']//a[.='{0}']/../following-sibling::div[1]//a[.='{1}']");
+				}
 				return leftSubMenuItemHyperlink;
 			}
 			set

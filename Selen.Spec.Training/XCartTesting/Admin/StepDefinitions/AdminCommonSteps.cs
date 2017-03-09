@@ -25,6 +25,8 @@ namespace XCartTesting.Admin.StepDefinitions
         [Given("I have gone to the (.*) url")]
         public void GoToUrl(string url)
         {
+            string a = "ab";
+            string b = nameof(a);
             Browser.Current.Navigate().GoToUrl(url);
         }
 

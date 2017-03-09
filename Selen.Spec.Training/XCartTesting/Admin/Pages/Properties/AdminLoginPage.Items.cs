@@ -14,10 +14,10 @@ namespace XCartTesting.Admin.Pages
 		{
 			get
 			{
-				if(emailTextbox==null)
+				if (emailTextbox==null)
 				{
-					emailTextbox = new Textbox(By.Name("login"));
-				}
+										emailTextbox = new Textbox(By.Name("login"));
+									}
 				return emailTextbox;
 			}
 			set
@@ -29,10 +29,10 @@ namespace XCartTesting.Admin.Pages
 		{
 			get
 			{
-				if(passwordTextbox==null)
+				if (passwordTextbox==null)
 				{
-					passwordTextbox = new Textbox(By.Name("password"));
-				}
+										passwordTextbox = new Textbox(By.Name("password"));
+									}
 				return passwordTextbox;
 			}
 			set
@@ -44,10 +44,10 @@ namespace XCartTesting.Admin.Pages
 		{
 			get
 			{
-				if(submitButton==null)
+				if (submitButton==null)
 				{
-					submitButton = new Button(By.XPath("//*[@id='login_form']//button"));
-				}
+										submitButton = new Button("//*[@id='login_form']//button");
+									}
 				return submitButton;
 			}
 			set
