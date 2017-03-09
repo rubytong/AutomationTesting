@@ -83,11 +83,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Admin_F01_Login.feature</DependentUpon>
     </Compile>
-    <Compile Include="Admin\Features\Admin_F02_Order.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Admin_F02_Order.feature</DependentUpon>
-    </Compile>
     <Compile Include="Common\BaseHooks.cs" />
     <Compile Include="Admin\Pages\Properties\AdminLoginPage.Items.cs">
       <AutoGen>True</AutoGen>
