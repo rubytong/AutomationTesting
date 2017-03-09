@@ -1,6 +1,6 @@
 ﻿Feature: Order
 	As an admin I want to be able to view orders
-@ignore
+
 Scenario: Admin_F02_TC01_Navigation
 	Given I have gone to the http://localhost:81/admin.php url
 	When I login with username user@example.com and password 1234

@@ -24,7 +24,7 @@ namespace Core.Selen
             get
             {
                 if (this.by != null)
-                    this.element = Browser.Wait(RunningSettings.WaitTime).Until(ExpectedConditions.ElementExists(by));
+                    this.element = Browser.Wait(RunningSettings.WaitTime * 6).Until(ExpectedConditions.ElementExists(by));
                 return this.element;
             }
             set { this.element = value; }
@@ -51,6 +51,17 @@ namespace Core.Selen
         {
             Element = Browser.Wait(RunningSettings.WaitTime).Until(ExpectedConditions.ElementToBeClickable(by));
             Element.Click();
+        }
+
+        public virtual void ClickAndWait(int seconds)
+        {
+            Element = Browser.Wait(RunningSettings.WaitTime).Until(ExpectedConditions.ElementToBeClickable(by));
+            Element.Click();
+            try
+            {
+                Browser.Wait(seconds).Until(ExpectedConditions.StalenessOf(Element));
+            }
+            catch { }
 
         }
 
@@ -61,7 +72,9 @@ namespace Core.Selen
                 Browser.Wait(timeoutInSeconds).Until(ExpectedConditions.ElementExists(by));
             }
             catch
-            { }
+            {
+                Console.WriteLine("Unable to Find.");
+            }
         }
         public bool Exists
         {

@@ -12,6 +12,7 @@ using System.IO;
 using Newtonsoft.Json.Linq;
 using System.Text.RegularExpressions;
 using Core.Selen.Controls;
+using OpenQA.Selenium.Support.UI;
 
 namespace XCartTesting.Admin.StepDefinitions
 {
@@ -50,11 +51,12 @@ namespace XCartTesting.Admin.StepDefinitions
             Hyperlink menuItemLink = new Hyperlink(string.Format(AdminCommonPage.LeftMenuItemHyperlink.XPath, name));
             menuItemLink.Click();
         }
+
         [When("I select (.*) under (.*) menu item")]
         public void SelectLinkUnderMenuItem(string subItem, string menuItem)
         {
-            Hyperlink link = new Hyperlink(string.Format(AdminCommonPage.LeftSubMenuItemHyperlink.XPath, subItem, menuItem));
-            link.Click();
+            Hyperlink link = new Hyperlink(string.Format(AdminCommonPage.LeftSubMenuItemHyperlink.XPath, menuItem, subItem));
+            link.ClickAndWait(Constants.WaitMediumTime);
         }
 
         #endregion
@@ -71,17 +73,17 @@ namespace XCartTesting.Admin.StepDefinitions
         {
             Hyperlink menuItemLink = new Hyperlink(string.Format(AdminCommonPage.LeftMenuItemHyperlink.XPath, name));
             Assert.IsTrue(menuItemLink.Displayed, $"{name} menu item isn't displayed in the left menu.");
-
         }
 
         [Then("(.*) items are displayed under (.*) menu item")]
         public void VerifySubItemListUnderMenuItem(string subItems, string menuItem)
         {
             var subItemsList = Regex.Split(subItems, ", ").ToList();
-            var items = subItemsList.Where(x => !(new Hyperlink(string.Format(AdminCommonPage.LeftSubMenuItemHyperlink.XPath, x,menuItem)).Displayed));
+            var items = subItemsList.Where(x => !(new Hyperlink(string.Format(AdminCommonPage.LeftSubMenuItemHyperlink.XPath, menuItem, x)).Displayed)).ToList();
 
-            Assert.IsTrue(items.Count<string>() == 0, $"These items {items} aren't displayed under {menuItem} menu item.");
+            Assert.IsTrue(items.Count() == 0, $"These items {items} aren't displayed under {menuItem} menu item.");
         }
+
         [Then("(.*) page should be displayed")]
         public void VerifyPageDisplayed(string name)
         {

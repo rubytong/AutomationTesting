@@ -12,11 +12,12 @@ namespace XCartTesting.Admin.Pages
     {
         public void CloseDialog()
         {
-            CloseDialogButton.WaitForControlExists(Constants.WaitMediumTime*4);
+            RunningSettings.WaitTime = Constants.WaitMediumTime * 2;
             if (CloseDialogButton.Displayed)
             {
                 CloseDialogButton.Click();
             }
+            RunningSettings.WaitTime = RunningSettings.DefaultTimeOut;
         }
     }
 }
