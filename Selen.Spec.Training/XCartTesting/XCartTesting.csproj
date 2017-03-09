@@ -71,6 +71,11 @@
     <Otherwise />
   </Choose>
   <ItemGroup>
+    <Compile Include="Admin\Features\Admin_F02_Order.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Admin_F02_Order.feature</DependentUpon>
+    </Compile>
     <Compile Include="Admin\Pages\Class1.cs" />
     <Compile Include="Admin\Pages\Properties\AdminCommonPage.Items.cs">
       <AutoGen>True</AutoGen>
@@ -102,6 +107,7 @@
     <EmbeddedResource Include="Common\PageSchema.json" />
     <None Include="Admin\Features\Admin_F02_Order.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Admin_F02_Order.feature.cs</LastGenOutput>
     </None>
     <EmbeddedResource Include="Admin\Interfaces\AdminCommonPage.json" />
     <EmbeddedResource Include="Admin\Interfaces\AdminLoginPage.json" />
