@@ -13,6 +13,7 @@ using Newtonsoft.Json.Linq;
 using System.Text.RegularExpressions;
 using Core.Selen.Controls;
 using OpenQA.Selenium.Support.UI;
+using OpenQA.Selenium;
 
 namespace XCartTesting.Admin.StepDefinitions
 {
@@ -84,9 +85,9 @@ namespace XCartTesting.Admin.StepDefinitions
             Assert.IsTrue(items.Count() == 0, $"These items {items} aren't displayed under {menuItem} menu item.");
         }
 
-        [Then("(.*) page should be displayed")]
+        [Then("The title page label should display (.*)")]
         public void VerifyPageDisplayed(string name)
-        {
+        { 
             string text = AdminCommonPage.PageTitleSpan.Text;
             Assert.AreEqual<string>(name, AdminCommonPage.PageTitleSpan.Text);
         }

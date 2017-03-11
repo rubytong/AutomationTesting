@@ -49,3 +49,4 @@ Temporary Items
 # Skip following folders
 /**/bin/*
 /**/obj/*
+/**/TestResults/*

@@ -24,7 +24,7 @@ namespace Core.Selen
             get
             {
                 if (this.by != null)
-                    this.element = Browser.Wait(RunningSettings.WaitTime * 6).Until(ExpectedConditions.ElementExists(by));
+                    this.element = Browser.Wait(RunningSettings.WaitTime).Until(ExpectedConditions.ElementExists(by));
                 return this.element;
             }
             set { this.element = value; }

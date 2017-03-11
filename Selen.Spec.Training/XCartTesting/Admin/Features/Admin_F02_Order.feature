@@ -8,11 +8,11 @@ Scenario: Admin_F02_TC01_Navigation
 	When I open Orders menu item
 	Then Orders list, Statistics, Payment transactions items are displayed under Orders menu item
 	When I select Orders list under Orders menu item
-	Then Orders page should be displayed
+	Then The title page label should display Orders
 	When I select Statistics under Orders menu item
-	Then Statistics page should be displayed
+	Then The title page label should display Statistics
 	When I select Payment transactions under Orders menu item
-	Then Payment transactions page should be displayed
+	Then The title page label should display Payment transactions
 
 @ignore
 Scenario: Admin_F02_TC02_OrdersPage_UI
