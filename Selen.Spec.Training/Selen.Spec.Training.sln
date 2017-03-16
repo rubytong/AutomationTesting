@@ -7,6 +7,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XCartTesting", "XCartTestin
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "Core\Core.csproj", "{FF552AF3-0322-48F4-86F8-B18AE49DBADA}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{A67B6F07-5277-490C-9131-B15AE01FDADE}"
+	ProjectSection(SolutionItems) = preProject
+		TestSettings1.testsettings = TestSettings1.testsettings
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "z.JenkinsRunning", "z.JenkinsRunning\z.JenkinsRunning.csproj", "{5717D739-0DB7-4D5C-8EA1-11550DF0F948}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +28,10 @@ Global
 		{FF552AF3-0322-48F4-86F8-B18AE49DBADA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FF552AF3-0322-48F4-86F8-B18AE49DBADA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FF552AF3-0322-48F4-86F8-B18AE49DBADA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5717D739-0DB7-4D5C-8EA1-11550DF0F948}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5717D739-0DB7-4D5C-8EA1-11550DF0F948}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5717D739-0DB7-4D5C-8EA1-11550DF0F948}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5717D739-0DB7-4D5C-8EA1-11550DF0F948}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -87,7 +87,7 @@ namespace XCartTesting.Admin.StepDefinitions
 
         [Then("The title page label should display (.*)")]
         public void VerifyPageDisplayed(string name)
-        { 
+        {
             string text = AdminCommonPage.PageTitleSpan.Text;
             Assert.AreEqual<string>(name, AdminCommonPage.PageTitleSpan.Text);
         }

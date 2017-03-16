@@ -1,6 +1,6 @@
 ﻿Feature: Login
 
-@mytag
+@ignore
 Scenario: Admin_F01_TC01_Open XCart Admin page
 	When I go to the http://localhost:81/admin.php url
 	Then The X-Cart online store builder - *Your company names* page should be displayed

@@ -70,11 +70,11 @@ namespace XCartTesting.Admin.Features
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Admin_F01_TC01_Open XCart Admin page")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Login")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("mytag")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.IgnoreAttribute()]
         public virtual void Admin_F01_TC01_OpenXCartAdminPage()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Admin_F01_TC01_Open XCart Admin page", new string[] {
-                        "mytag"});
+                        "ignore"});
 #line 4
 this.ScenarioSetup(scenarioInfo);
 #line 5

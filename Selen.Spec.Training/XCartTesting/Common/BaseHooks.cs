@@ -16,7 +16,7 @@ namespace XCartTesting.Hooks
         public void BeforeScenario()
         {
             Browser.DriversPath = Constants.DriversPath;
-            Browser.Name = Constants.Browser;
+            Browser.Name = "Firefox";
         }
 
         [AfterScenario]
@@ -24,6 +24,8 @@ namespace XCartTesting.Hooks
         {
             Browser.Current.Close();
             Browser.Current.Quit();
+            Browser.Current.Dispose();
+            Browser.Current = null;
 
             //Process[] pro = Process.GetProcessesByName("WerFault");
             //foreach (var p in pro) p.Kill();

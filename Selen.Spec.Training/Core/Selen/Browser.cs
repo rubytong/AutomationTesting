@@ -16,19 +16,54 @@ namespace Core.Selen
 {
     public class Browser
     {
-        private static string pvName = "Chrome";
+        private static string name;
         private static string driversPath;
+        private static IWebDriver currentDriver;
 
         public static string Name
         {
-            get { return pvName; }
-            set { pvName = value; }
+            get { return name; }
+            set { name = value; }
         }
 
         public static string DriversPath
         {
             get { return driversPath; }
             set { driversPath = value; }
+        }
+
+
+        public static IWebDriver Current
+        {
+            get
+            {
+                if (currentDriver == null)
+                {
+                    Console.WriteLine($"Browser name {name}");
+                    switch (name)
+                    {
+                        case "IE":
+                            currentDriver = new InternetExplorerDriver();
+                            break;
+                        case "Chrome":
+                            currentDriver = new ChromeDriver();
+                            break;
+                        case "Firefox":
+                            System.Environment.SetEnvironmentVariable("webdriver.gecko.driver", driversPath);
+                            //Skip crash dialog
+                            System.Environment.SetEnvironmentVariable("XRE_NO_WINDOWS_CRASH_DIALOG", "1");
+                            currentDriver = new FirefoxDriver();
+                            Console.WriteLine("Create driver successfully.");
+                            break;
+                        default:
+                            Console.WriteLine("Browser name is null.");
+                            break;
+                    }
+                  //  currentDriver.Manage().Window.Maximize();
+                }
+                return currentDriver;
+            }
+            set { currentDriver = value; }
         }
 
         public static WebDriverWait Wait(int seconds)
@@ -39,36 +74,6 @@ namespace Core.Selen
             wait.IgnoreExceptionTypes(typeof(NoSuchElementException), typeof(StaleElementReferenceException));
 
             return wait;
-        }
-
-        private static IWebDriver currentDriver;
-        public static IWebDriver Current
-        {
-            get
-            {
-                if (currentDriver == null)
-                {
-                    switch (pvName)
-                    {
-                        case "IE":
-                            currentDriver = new InternetExplorerDriver(driversPath);
-                            break;
-                        case "Chrome":
-                            currentDriver = new ChromeDriver(driversPath);
-                            break;
-                        case "Firefox":
-                            System.Environment.SetEnvironmentVariable("webdriver.gecko.driver", driversPath);
-                            //Skip crash dialog
-                            System.Environment.SetEnvironmentVariable("XRE_NO_WINDOWS_CRASH_DIALOG", "1");
-                            currentDriver = new FirefoxDriver();
-                            break;
-                        default: break;
-                    }
-                    currentDriver.Manage().Window.Maximize();
-                }
-                return currentDriver;
-            }
-            set { currentDriver = value; }
         }
 
         public string CurrentWindowHandle
