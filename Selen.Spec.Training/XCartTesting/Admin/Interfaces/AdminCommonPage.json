@@ -11,13 +11,13 @@
       "controlName": "Left Menu Item",
       "controlType": "Hyperlink",
       "by": "XPath",
-      "value": "//.[@id='leftMenu']//a[.='{0}']"
+      "value": "//*[@id='leftMenu']//a[.='{0}']"
     },
     {
       "controlName": "Left Sub Menu Item",
       "controlType": "Hyperlink",
       "by": "XPath",
-      "value": "//div[@id='leftMenu']//a[.='{0}']/../following-sibling::div[1]//a[.='{1}']"
+      "value": "//*[@id='leftMenu']//a[.='{0}']/../following-sibling::div[1]//a[.='{1}']"
     },
     {
       "controlName": "Page Title",

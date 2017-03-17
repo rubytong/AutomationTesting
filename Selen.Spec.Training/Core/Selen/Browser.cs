@@ -39,14 +39,16 @@ namespace Core.Selen
             {
                 if (currentDriver == null)
                 {
-                    Console.WriteLine($"Browser name {name}");
                     switch (name)
                     {
                         case "IE":
                             currentDriver = new InternetExplorerDriver();
+                            currentDriver.Manage().Window.Maximize();
                             break;
                         case "Chrome":
-                            currentDriver = new ChromeDriver();
+                            ChromeOptions chromeOptions = new ChromeOptions();
+                            chromeOptions.AddArguments("start-maximized");
+                            currentDriver = new ChromeDriver(chromeOptions);
                             break;
                         case "Firefox":
                             System.Environment.SetEnvironmentVariable("webdriver.gecko.driver", driversPath);
@@ -54,12 +56,12 @@ namespace Core.Selen
                             System.Environment.SetEnvironmentVariable("XRE_NO_WINDOWS_CRASH_DIALOG", "1");
                             currentDriver = new FirefoxDriver();
                             Console.WriteLine("Create driver successfully.");
+                            currentDriver.Manage().Window.Maximize();
                             break;
                         default:
                             Console.WriteLine("Browser name is null.");
                             break;
                     }
-                  //  currentDriver.Manage().Window.Maximize();
                 }
                 return currentDriver;
             }

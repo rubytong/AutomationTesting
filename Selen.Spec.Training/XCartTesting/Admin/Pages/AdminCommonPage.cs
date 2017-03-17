@@ -11,13 +11,11 @@ namespace XCartTesting.Admin.Pages
     public partial class AdminCommonPage
     {
         public void CloseDialog()
-        {
-            RunningSettings.WaitTime = Constants.WaitMediumTime * 2;
-            if (CloseDialogButton.Displayed)
+        {       
+            if (CloseDialogButton.WaitForControlVisible(Constants.WaitLongTime*2))
             {
                 CloseDialogButton.Click();
             }
-            RunningSettings.WaitTime = RunningSettings.DefaultTimeOut;
         }
     }
 }

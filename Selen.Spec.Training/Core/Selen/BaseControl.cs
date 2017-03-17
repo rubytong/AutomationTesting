@@ -24,7 +24,7 @@ namespace Core.Selen
             get
             {
                 if (this.by != null)
-                    this.element = Browser.Current.FindElement(by);
+                    this.element = Browser.Wait(RunningSettings.WaitTime).Until(ExpectedConditions.ElementExists(by));
                 return this.element;
             }
             set { this.element = value; }
@@ -61,21 +61,42 @@ namespace Core.Selen
             {
                 Browser.Wait(seconds).Until(ExpectedConditions.StalenessOf(Element));
             }
-            catch { }
+            catch (Exception ex)
+            {
+                Console.WriteLine(String.Format("The {0} control doesn't exist in {1} with {2}", by, Browser.Current.Title, ex.Message));
+            }
 
         }
 
-        public void WaitForControlExists(int timeoutInSeconds = 10)
+        public bool WaitForControlExist(int timeoutInSeconds = 10)
         {
             try
             {
                 Browser.Wait(timeoutInSeconds).Until(ExpectedConditions.ElementExists(by));
+                return true;
             }
-            catch
+            catch (Exception ex)
             {
-                Console.WriteLine("Unable to Find.");
+                Console.WriteLine(String.Format("The {0} control doesn't exist in {1} with {2}", by, Browser.Current.Title, ex.Message));
+                return false;
             }
         }
+
+
+        public bool WaitForControlVisible(int timeoutInSeconds = 10)
+        {
+            try
+            {
+                Browser.Wait(timeoutInSeconds).Until(ExpectedConditions.ElementIsVisible(by));
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(String.Format("The {0} control doesn't exist in {1} with {2}", by, Browser.Current.Title, ex.Message));
+                return false;
+            }
+        }
+
         public bool Exists
         {
             get
@@ -84,7 +105,7 @@ namespace Core.Selen
                 {
                     if (by != null)
                     {
-                        WaitForControlExists();
+                        WaitForControlExist();
                         int count = Browser.Current.FindElements(by).Count;
                         return count > 0 ? true : false;
                     }

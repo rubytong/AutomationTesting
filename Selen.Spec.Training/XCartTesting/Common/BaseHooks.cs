@@ -8,6 +8,7 @@ using XCartTesting.Common;
 using System.Diagnostics;
 using OpenQA.Selenium.Remote;
 using OpenQA.Selenium;
+using System.Threading;
 
 namespace XCartTesting.Hooks
 {

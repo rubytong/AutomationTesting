@@ -32,7 +32,7 @@ namespace XCartTesting.Admin.Pages
 			{
 				if (leftMenuItemHyperlink==null)
 				{
-					leftMenuItemHyperlink = new Hyperlink("//.[@id='leftMenu']//a[.='{0}']");
+					leftMenuItemHyperlink = new Hyperlink("//div[@id='leftMenu']//a[.='{0}']");
 				}
 				return leftMenuItemHyperlink;
 			}
