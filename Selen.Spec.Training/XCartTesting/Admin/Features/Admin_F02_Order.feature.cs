@@ -76,28 +76,7 @@ namespace XCartTesting.Admin.Features
 #line 4
 this.ScenarioSetup(scenarioInfo);
 #line 5
- testRunner.Given("I have gone to the http://localhost:81/admin.php url", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 6
- testRunner.When("I login with username user@example.com and password 1234", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 7
- testRunner.Then("Orders menu item should be displayed in the left menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 8
- testRunner.When("I open Orders menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 9
- testRunner.Then("Orders list, Statistics, Payment transactions items are displayed under Orders me" +
-                    "nu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 10
- testRunner.When("I select Orders list under Orders menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 11
- testRunner.Then("The title page label should display Orders", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 12
- testRunner.When("I select Statistics under Orders menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 13
- testRunner.Then("The title page label should display Statistics", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 14
- testRunner.When("I select Payment transactions under Orders menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 15
- testRunner.Then("The title page label should display Payment transactions", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Given("I have gone to the http://google.com url", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -110,8 +89,29 @@ this.ScenarioSetup(scenarioInfo);
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Admin_F02_TC02_OrdersPage_UI", new string[] {
                         "ignore"});
-#line 18
+#line 9
 this.ScenarioSetup(scenarioInfo);
+#line 10
+ testRunner.When("I login with username user@example.com and password 1234", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 11
+ testRunner.Then("Orders menu item should be displayed in the left menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 12
+ testRunner.When("I open Orders menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 13
+ testRunner.Then("Orders list, Statistics, Payment transactions items are displayed under Orders me" +
+                    "nu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 14
+ testRunner.When("I select Orders list under Orders menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 15
+ testRunner.Then("The title page label should display Orders", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 16
+ testRunner.When("I select Statistics under Orders menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 17
+ testRunner.Then("The title page label should display Statistics", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 18
+ testRunner.When("I select Payment transactions under Orders menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 19
+ testRunner.Then("The title page label should display Payment transactions", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -124,7 +124,7 @@ this.ScenarioSetup(scenarioInfo);
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Admin_F02_TC03_OrdersPage_NewOrderAddedToOrdersTable", new string[] {
                         "ignore"});
-#line 21
+#line 22
 this.ScenarioSetup(scenarioInfo);
 #line hidden
             this.ScenarioCleanup();
@@ -138,7 +138,7 @@ this.ScenarioSetup(scenarioInfo);
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Admin_F02_TC04_OrdersPage_DeleteOrder", new string[] {
                         "ignore"});
-#line 24
+#line 25
 this.ScenarioSetup(scenarioInfo);
 #line hidden
             this.ScenarioCleanup();
@@ -152,7 +152,7 @@ this.ScenarioSetup(scenarioInfo);
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Admin_F02_TC05_OrdersPage_SearchOrders", new string[] {
                         "ignore"});
-#line 27
+#line 28
 this.ScenarioSetup(scenarioInfo);
 #line hidden
             this.ScenarioCleanup();

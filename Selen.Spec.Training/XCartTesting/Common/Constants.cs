@@ -21,7 +21,7 @@ namespace XCartTesting.Common
         public static int WaitMediumTime { get { return 20; } }
         public static int WaitLongTime { get { return 30; } }
         public static string DriversPath { get { return @".\..\..\..\drivers"; } }
-        public static string UrlAdmin { get { return "http://qa.sitevisit.fve.ad.5ssl.com"; } }
-        public static string Browser { get { return "IE"; } }
+        public static string UrlAdmin { get { return "http://localhost:80/admin.php?target=login"; } }
+        public static string Browser { get { return "Chrome"; } }
     }
 }

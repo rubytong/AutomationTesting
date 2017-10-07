@@ -2,7 +2,11 @@
 	As an admin I want to be able to view orders
 
 Scenario: Admin_F02_TC01_Navigation
-	Given I have gone to the http://localhost:81/admin.php url
+	Given I have gone to the http://google.com url
+
+
+@ignore
+Scenario: Admin_F02_TC02_OrdersPage_UI
 	When I login with username user@example.com and password 1234
 	Then Orders menu item should be displayed in the left menu
 	When I open Orders menu item
@@ -13,9 +17,6 @@ Scenario: Admin_F02_TC01_Navigation
 	Then The title page label should display Statistics
 	When I select Payment transactions under Orders menu item
 	Then The title page label should display Payment transactions
-
-@ignore
-Scenario: Admin_F02_TC02_OrdersPage_UI
 
 @ignore
 Scenario: Admin_F02_TC03_OrdersPage_NewOrderAddedToOrdersTable

@@ -12,7 +12,6 @@ using System.IO;
 using Newtonsoft.Json.Linq;
 using System.Text.RegularExpressions;
 using Core.Selen.Controls;
-using OpenQA.Selenium.Support.UI;
 using OpenQA.Selenium;
 
 namespace XCartTesting.Admin.StepDefinitions
@@ -28,7 +27,7 @@ namespace XCartTesting.Admin.StepDefinitions
         [Given("I have gone to the (.*) url")]
         public void GoToUrl(string url)
         {
-            Browser.Current.Navigate().GoToUrl(url);
+            Driver.Current.Navigate().GoToUrl(url);
         }
 
         [When("I click (.*button|.*link) on (.*) page")]
@@ -66,7 +65,7 @@ namespace XCartTesting.Admin.StepDefinitions
         [Then("The (.*) page should be displayed")]
         public void VerifyTitlePage(string title)
         {
-            Assert.AreEqual<string>(title, Browser.Current.Title, "The title page is incorrect.");
+            Assert.AreEqual<string>(title, Driver.Current.Title, "The title page is incorrect.");
         }
 
         [Then("(.*) menu item should be displayed in the left menu")]

@@ -1,6 +1,5 @@
-﻿using Core.Selen;
+﻿using Core.Selen.Controls;
 using OpenQA.Selenium;
-using Core.Selen.Controls;
 
 namespace XCartTesting.Admin.Pages
 {

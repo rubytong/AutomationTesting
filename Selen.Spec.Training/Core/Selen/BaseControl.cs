@@ -12,19 +12,20 @@ namespace Core.Selen
     {
         private By by;
         private string xPath;
+        private IWebElement element;
+
         public string XPath
         {
             get { return this.xPath; }
             set { this.by = By.XPath(value); this.xPath = value; }
         }
-        private IWebElement element;
 
         protected IWebElement Element
         {
             get
             {
                 if (this.by != null)
-                    this.element = Browser.Wait(RunningSettings.WaitTime).Until(ExpectedConditions.ElementExists(by));
+                    this.element = Driver.Wait(RunningSettings.WaitTime).Until(ExpectedConditions.ElementExists(by));
                 return this.element;
             }
             set { this.element = value; }
@@ -49,21 +50,21 @@ namespace Core.Selen
 
         public virtual void Click()
         {
-            Element = Browser.Wait(RunningSettings.WaitTime).Until(ExpectedConditions.ElementToBeClickable(by));
+            Element = Driver.Wait(RunningSettings.WaitTime).Until(ExpectedConditions.ElementToBeClickable(by));
             Element.Click();
         }
 
         public virtual void ClickAndWait(int seconds)
         {
-            Element = Browser.Wait(RunningSettings.WaitTime).Until(ExpectedConditions.ElementToBeClickable(by));
+            Element = Driver.Wait(RunningSettings.WaitTime).Until(ExpectedConditions.ElementToBeClickable(by));
             Element.Click();
             try
             {
-                Browser.Wait(seconds).Until(ExpectedConditions.StalenessOf(Element));
+                Driver.Wait(seconds).Until(ExpectedConditions.StalenessOf(Element));
             }
             catch (Exception ex)
             {
-                Console.WriteLine(String.Format("The {0} control doesn't exist in {1} with {2}", by, Browser.Current.Title, ex.Message));
+                Console.WriteLine(String.Format("The {0} control doesn't exist in {1} with {2}", by, Driver.Current.Title, ex.Message));
             }
 
         }
@@ -72,12 +73,12 @@ namespace Core.Selen
         {
             try
             {
-                Browser.Wait(timeoutInSeconds).Until(ExpectedConditions.ElementExists(by));
+                Driver.Wait(timeoutInSeconds).Until(ExpectedConditions.ElementExists(by));
                 return true;
             }
             catch (Exception ex)
             {
-                Console.WriteLine(String.Format("The {0} control doesn't exist in {1} with {2}", by, Browser.Current.Title, ex.Message));
+                Console.WriteLine(String.Format("The {0} control doesn't exist in {1} with {2}", by, Driver.Current.Title, ex.Message));
                 return false;
             }
         }
@@ -87,12 +88,12 @@ namespace Core.Selen
         {
             try
             {
-                Browser.Wait(timeoutInSeconds).Until(ExpectedConditions.ElementIsVisible(by));
+                Driver.Wait(timeoutInSeconds).Until(ExpectedConditions.ElementIsVisible(by));
                 return true;
             }
             catch (Exception ex)
             {
-                Console.WriteLine(String.Format("The {0} control doesn't exist in {1} with {2}", by, Browser.Current.Title, ex.Message));
+                Console.WriteLine(String.Format("The {0} control doesn't exist in {1} with {2}", by, Driver.Current.Title, ex.Message));
                 return false;
             }
         }
@@ -106,14 +107,14 @@ namespace Core.Selen
                     if (by != null)
                     {
                         WaitForControlExist();
-                        int count = Browser.Current.FindElements(by).Count;
+                        int count = Driver.Current.FindElements(by).Count;
                         return count > 0 ? true : false;
                     }
                     return element != null ? true : false;
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine(String.Format("The {0} control doesn't exist in {1} with {2}", by, Browser.Current.Title, ex.Message));
+                    Console.WriteLine(String.Format("The {0} control doesn't exist in {1} with {2}", by, Driver.Current.Title, ex.Message));
                     return false;
                 }
             }

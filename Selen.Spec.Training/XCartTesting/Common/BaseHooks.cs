@@ -18,17 +18,19 @@ namespace XCartTesting.Hooks
         [BeforeScenario]
         public void BeforeScenario()
         {
-            Browser.DriversPath = Constants.DriversPath;
-            Browser.Name =Constants.Browser;
+            Driver.DriversPath = Constants.DriversPath;
+            Driver.Name =Constants.Browser;
+            Driver.Grid = false;
+            Driver.HubUrl = @"http://192.168.1.51:4444/wd/hub/";
         }
 
         [AfterScenario]
         public void AfterScenario()
         {
-            Browser.Current.Close();
-            Browser.Current.Quit();
-            Browser.Current.Dispose();
-            Browser.Current = null;
+            Driver.Current.Close();
+            Driver.Current.Quit();
+            Driver.Current.Dispose();
+            Driver.Current = null;
 
             //Process[] pro = Process.GetProcessesByName("WerFault");
             //foreach (var p in pro) p.Kill();
